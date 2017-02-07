@@ -8,6 +8,24 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition  Height="30"/>
+            <RowDefinition  Height="30"/>
+            <RowDefinition  Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="I Wanna talk to the cloud" 
+                   HorizontalAlignment="Center" FontSize="24"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Center"
+            Text="Your Telemetry"/>
+        <TextBox Grid.Row="2" 
+                 x:Name="CommandTB"
+                 FontWeight="Bold" PlaceholderText="Write some thing  and send it..."/>
+        <Button Grid.Row="3" HorizontalAlignment="Center" Click="Button_Click">Send</Button>
+
+        <TextBlock Grid.Row="4" FontWeight="Bold" x:Name="CloudOutput" Text="Cloud will answer shortly...."/>
+
 
     </Grid>
 </Page>

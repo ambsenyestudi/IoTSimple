@@ -26,5 +26,11 @@ namespace IoTSimpleTelemetry.Demo0
         {
             this.InitializeComponent();
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string telemetry = CommandTB.Text;
+            string response = string.Format("Your telemetry ## {0} ## was successfully recieverd", telemetry);
+            CloudOutput.Text = response;
+        }
     }
 }
