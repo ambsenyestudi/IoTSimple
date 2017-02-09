@@ -38,7 +38,7 @@ namespace IoTSimpleTelemetry.IoTHubServiceLibrary.IT
 
         }
         [TestMethod]
-        public async Task MessagingReadingIsNotNull_IT ()
+        public async Task MessagingReadingIsNotNull_IT()
         {
             string message = "Integration Testing";
             await _telemetryService.SendDeviceToCloudMessagesAsync(DateTime.Now.ToString(), message);
@@ -47,6 +47,12 @@ namespace IoTSimpleTelemetry.IoTHubServiceLibrary.IT
             //Printing it to test output
             System.Diagnostics.Debug.WriteLine(resultMessage);
             Assert.IsNotNull(resultMessage);
+        }
+        [ExpectedException(typeof(ArgumentNullException))]
+        [TestMethod]
+        public void BadReadingServiceInitzalization_IT()
+        {
+            _readDeviceToCloudMessageService.InitializeService(null, null);
         }
     }
 }
