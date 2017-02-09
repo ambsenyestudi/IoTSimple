@@ -20,8 +20,6 @@ namespace IoTSimpleTelemetry.IoTHubServiceLibrary.IT
             _deviceManagerService = new IOTHubDeviceManagerService();
 
             _connectionString = ConfigurationManager.AppSettings["IotHubConnectionString"].ToString();
-            _iotHubUri = ConfigurationManager.AppSettings["IotHubUri"].ToString();
-            _deviceId = ConfigurationManager.AppSettings["DeviceId"].ToString();
             //I this throws an exception review App.config for correct connectionstring
             _deviceManagerService.InitializeDevice(_connectionString);
 

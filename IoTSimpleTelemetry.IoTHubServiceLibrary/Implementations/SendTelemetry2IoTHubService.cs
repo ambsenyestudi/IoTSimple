@@ -44,6 +44,7 @@ namespace IoTSimpleTelemetry.IoTHubServiceLibrary.Implementations
             {
                 throw new ArgumentNullException("InitalizeMessagingService some parameter is not right [iotHubUri,deviceKey,deviceID]");
             }
+            _deviceClient = DeviceClient.Create(_iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey(_deviceID, _deviceKey), TransportType.Mqtt);
         }
     }
 }
